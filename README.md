@@ -18,7 +18,8 @@ Project Organization
     │    
     ├── environment.yml               <- Required libraries for the environment.
     │
-    ├── app2.py                       <- Source code for use in this project.
+    ├── app2.py                       <- Main code for use in this project (same as in Jupyter
+    │                                   notebook file app2.ipyb).
     │            
     ├── README.md                     <- The top-level README file.
     │                
