@@ -27,5 +27,4 @@ Project Organization
     ├── README.md                     <- The top-level README file.
     │                
     └── requirements.txt              <- The requirements file for reproducing the analysis
-                                        environment, e.g.generated with
-                                        `conda freeze -e > requirements.txt`.
+                                        environment in addition to environment.yml.
