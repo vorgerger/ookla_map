@@ -12,6 +12,7 @@ Project Organization
 
     ├── Data
     │   ├── OrigOoklaData             <- Ookla open data source for the entire world.
+    │                                   The data is not being stored here. 
     │   ├── FinlandData               <- Filtered data for Finland.
     │
     ├── app2.ipyb                     <- Jupyter notebook with the code.                 
