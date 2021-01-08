@@ -90,16 +90,7 @@ app.layout = html.Div([
 @app.callback(Output('counter', 'children'),
               [Input('map', 'hoverData')])
 def find_counter(hoverData):
-    #pts = len(selectedData['points'])
-    #rng_or_lp = list(selectedData.keys())
-    #rng_or_lp.remove('lassoPoints')
     mean = hoverData['points'][0]['customdata'][0]
-    #print(mean)
-   # data = selectedData['points']['customdata'[2]]
-    #rng_or_lp = list(selectedData.keys())
-    #rng_or_lp.remove('points')
-    #avg_thp = mean(selectedData[rng_or_lp[0]]['customdata'[1]])
-    #return 'Counter = {:.2f}'.format(mean)
     return 'Avg_d_mbps in the tile you hover over is {} Mpbs.'.format(mean)
 
 if __name__ == '__main__':
