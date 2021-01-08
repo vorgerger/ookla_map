@@ -25,28 +25,22 @@ finland['avg_d_mbps'] = finland['avg_d_kbps']/1000
 
 
 #Quantiles for finland['avg_d_mbps'] in order to plot 'avg_d_mbps' in ranges
-avg_d_q1 = round(finland['avg_d_mbps'].quantile(.1),1)
-avg_d_q2 = round(finland['avg_d_mbps'].quantile(.2),1)
-avg_d_q3 = round(finland['avg_d_mbps'].quantile(.3),1)
-avg_d_q4 = round(finland['avg_d_mbps'].quantile(.4),1)
-avg_d_q5 = round(finland['avg_d_mbps'].quantile(.5),1)
-avg_d_q6 = round(finland['avg_d_mbps'].quantile(.6),1)
-avg_d_q7 = round(finland['avg_d_mbps'].quantile(.7),1)
-avg_d_q8 = round(finland['avg_d_mbps'].quantile(.8),1)
-avg_d_q9 = round(finland['avg_d_mbps'].quantile(.9),1)
-
-bins = [0, avg_d_q1, avg_d_q2, avg_d_q3, avg_d_q4, avg_d_q5, avg_d_q6, avg_d_q7, avg_d_q8, avg_d_q9,finland['avg_d_mbps'].max()]
-labels = ['<{}'.format(avg_d_q1),
-        '>={} & <{}'.format(avg_d_q1,avg_d_q2),
-        '>={} & <{}'.format(avg_d_q2,avg_d_q3),
-        '>={} & <{}'.format(avg_d_q3,avg_d_q4),
-        '>={} & <{}'.format(avg_d_q4,avg_d_q5),
-        '>={} & <{}'.format(avg_d_q5,avg_d_q6),
-        '>={} & <{}'.format(avg_d_q6,avg_d_q7),
-        '>={} & <{}'.format(avg_d_q7,avg_d_q8),
-        '>={} & <{}'.format(avg_d_q8,avg_d_q9),
-        '>={}'.format(avg_d_q9)
-]
+bins = []
+for i in range(1,10,1): 
+    bins.append(round(finland['avg_d_mbps'].quantile(i/10),1)) 
+    
+bins.insert(0, 0)
+bins.append(finland['avg_d_mbps'].max())
+labels = ['<{}'.format(bins[1]),
+        '>={} & <{}'.format(bins[1],bins[2]),
+        '>={} & <{}'.format(bins[2],bins[3]),
+        '>={} & <{}'.format(bins[3],bins[4]),
+        '>={} & <{}'.format(bins[4],bins[5]),
+        '>={} & <{}'.format(bins[5],bins[6]),
+        '>={} & <{}'.format(bins[6],bins[7]),
+        '>={} & <{}'.format(bins[7],bins[8]),
+        '>={} & <{}'.format(bins[8],bins[9]),
+        '>={}'.format(bins[9])]
 
 finland['avg_d_mbps_ranges'] = pd.cut(finland['avg_d_mbps'], bins=bins, labels=labels)
 finland = finland.sort_values(by=['avg_d_mbps'])
