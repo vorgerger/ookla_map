@@ -20,7 +20,7 @@ Project Organization
     │
     ├── app2.py                       <- Source code for use in this project.
     │            
-    ├── README.md                     <- The top-level README for developers using this project.
+    ├── README.md                     <- The top-level README file.
     │                
     └── requirements.txt              <- The requirements file for reproducing the analysis
                                         environment, e.g.generated with
