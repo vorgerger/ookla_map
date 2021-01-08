@@ -7,12 +7,7 @@ import dash_html_components as html
 import dash_auth
 from dash.dependencies import Input, Output
 
-USERNAME_PASSWORD_PAIRS = [
-    ['Voropaeva', 'AGF8453m27!']
-]
-
-
-#orld = geopandas.read_file('gps_mobile_tiles.shx')
+#world = geopandas.read_file('Data/OrigOoklaData/gps_mobile_tiles.shp')
 
 #print(world.head())
 #print(world.columns)
@@ -23,13 +18,11 @@ USERNAME_PASSWORD_PAIRS = [
 #print(finland.columns)
 #finland.to_file("finland.shp")
 
-finland = geopandas.read_file('finland.shx')
-
+finland = geopandas.read_file('Data/FinlandData/finland.shp')
+finland['avg_d_mbps'] = finland['avg_d_kbps']/1000
 #print(finland.head())
 #print(finland.columns)
 
-
-finland['avg_d_mbps'] = finland['avg_d_kbps']/1000
 
 #Quantiles for finland['avg_d_mbps'] in order to plot 'avg_d_mbps' in ranges
 avg_d_q1 = round(finland['avg_d_mbps'].quantile(.1),1)
@@ -56,12 +49,10 @@ labels = ['<{}'.format(avg_d_q1),
 ]
 
 finland['avg_d_mbps_ranges'] = pd.cut(finland['avg_d_mbps'], bins=bins, labels=labels)
-
 finland = finland.sort_values(by=['avg_d_mbps'])
-
 #print(finland['avg_d_mbps_ranges'].unique())
 
-
+#finland = finland.head(1000)
 
 fig = px.choropleth_mapbox(finland,
                 geojson=finland.geometry,
@@ -78,7 +69,9 @@ fig = px.choropleth_mapbox(finland,
 
 
 app = dash.Dash()
-auth = dash_auth.BasicAuth(app,USERNAME_PASSWORD_PAIRS)
+#USERNAME_PASSWORD_PAIRS = [['XXXX', 'XXXX']]
+#auth = dash_auth.BasicAuth(app,USERNAME_PASSWORD_PAIRS)
+#server = app.server
 app.layout = html.Div([
     html.H1('Speedtest by Ookla Mobile Network'),
     html.H2('Performance Map Tiles'),
@@ -107,7 +100,7 @@ def find_counter(hoverData):
     #rng_or_lp.remove('points')
     #avg_thp = mean(selectedData[rng_or_lp[0]]['customdata'[1]])
     #return 'Counter = {:.2f}'.format(mean)
-    return 'Avg_d_mbps in the tile you hover over is {} Mpbs'.format(mean)
+    return 'Avg_d_mbps in the tile you hover over is {} Mpbs.'.format(mean)
 
 if __name__ == '__main__':
     app.run_server()  # Turn off reloader if inside Jupyter
