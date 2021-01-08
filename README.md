@@ -1,6 +1,6 @@
 # Ookla_map
 
-This code is for a dashboard that shows average downlink speeds in Finland using [Ookla open data set](https://www.speedtest.net/insights/blog/announcing-ookla-open-datasets)
+This code is for a dashboard that shows average downlink speeds in Finland using [Ookla open data set](https://www.speedtest.net/insights/blog/announcing-ookla-open-datasets).
 
 Ookla data set is available via the [Registry of Open Data on AWS](https://registry.opendata.aws/speedtest-global-performance/) in Apache Parquet and Shapefile formats. The data is to be used under the [Creative Commons license for non-commercial use](https://creativecommons.org/licenses/by-nc-sa/4.0/) license.
 
