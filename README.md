@@ -17,7 +17,7 @@ Project Organization
     ├── app2.ipyb                     <- Jupyter notebook with the code.                 
     │    
     ├── environment.yml               <- Required libraries for the environment.
-    │                                    Geopandas lib AND ITS DEPENDENCIES is to be installed via conda environment,
+    │                                    Geopandas lib and its dependencies are to be installed via conda environment,
     │                                    not via pip install. Make to sure to remove or change the
     │                                    last row of this file: "prefix: C:\Users\OmniAvo\.conda\envs\mapenv".
     │
