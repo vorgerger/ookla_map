@@ -29,4 +29,4 @@ Project Organization
     │                
     └── requirements.txt              <- The requirements file for reproducing the analysis
                                         environment in addition to environment.yml.
-![Alt Text](screenshot.png)
+![Alt Text](screenshot.PNG)
