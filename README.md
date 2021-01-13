@@ -10,9 +10,11 @@ Ookla's technical documentation and tutorials are available on [GitHub](https://
 Project Organization
 ------------
 
+    ├── assets                        <- styling and pictures used.
+    │ 
     ├── Data
     │   ├── OrigOoklaData             <- Ookla open data source for the entire world.
-    │                                   The data is not being stored here.
+    │                                   The data is not being stored here.    
     │   ├── FinlandData               <- Filtered data for Finland (Uusimaa, Vantaa).
     │
     ├── app2.ipyb                     <- Jupyter notebook with the code.                 
