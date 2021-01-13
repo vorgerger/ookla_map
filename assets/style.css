@@ -1,0 +1,109 @@
+body{
+    background-color: #f0f0f0;
+}
+
+.header {
+  margin: 20px;
+  font-weight: 700;
+  font-size: 	26px
+}
+
+.main-filters_row{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Where the magic happens */
+  grid-gap: 20px;
+  margin: 10px;
+}
+
+
+.filters {
+  display: flex;
+  background-color: rgb(250, 250, 250);
+  align-items: center;
+  justify-content: space-between;
+  border-color: rgb(204, 204, 204);
+  border-width: thin;
+  grid-gap: 20px;
+  height: 100%;
+}
+
+
+.filters_row {
+  margin: 10px;
+  background-color: rgb(250, 250, 250);
+  border-style: solid;
+  border-color: rgb(204, 204, 204);
+  border-width: thin;
+}
+
+.download {
+    background: url("/assets/arrow.svg") no-repeat scroll center center / 100% auto;
+    height:30px;
+    width:30px;
+    position: relative;
+    vertical-align: middle;
+    border-color: rgb(250, 250, 250);
+    border-width: 0px;
+    margin-left: 50px;
+}
+
+.main-overview {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(265px, 1fr)); /* Where the magic happens */
+    grid-auto-rows: 200px;
+    grid-gap: 20px;
+    margin: 10px;
+}
+
+.overviewcard {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #d3d3;
+    height: 100%;
+}
+
+.main-cards {
+  column-count: 2;
+  column-gap: 20px;
+  margin: 10px;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  height: 200%;
+  margin-bottom: 20px;
+  -webkit-column-break-inside: avoid;
+}
+
+/* Force varying heights to simulate dynamic content */
+.card:first-child {
+  height: 485px;
+}
+
+.card:nth-child(2) {
+  height: 200px;
+  border-style: dashed;
+}
+
+.card:nth-child(3) {
+  height: 265px;
+}
+
+
+.main-cards {
+  column-count: 1;
+  column-gap: 20px;
+  margin: 10px;
+}
+
+/* Medium-sized screen breakpoint (tablet, 1050px) */
+@media only screen and (min-width: 65.625em) {
+  /* Break out main cards into two columns */
+  .main-cards {
+    column-count: 2;
+  }
+}
